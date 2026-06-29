@@ -1,0 +1,14 @@
+.videoCard {
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.375s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.375s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.videoCard:hover {
+  transform: translateY(0px) scale(1.04);
+  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.22);
+  z-index: 2;
+}

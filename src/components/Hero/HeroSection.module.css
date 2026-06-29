@@ -12,12 +12,6 @@
 .mediaStack {
   position: relative;
   animation: heroMediaFloat 6s ease-in-out infinite;
-  transition: transform 0.35s ease;
-}
-
-.mediaStack:hover {
-  animation-play-state: paused;
-  transform: translateY(-10px);
 }
 
 .mediaCardLayer {

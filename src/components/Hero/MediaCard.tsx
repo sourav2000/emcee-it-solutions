@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { PlayIcon } from './icons'
+import styles from './MediaCard.module.css'
 import VideoModal from './VideoModal'
 
 interface MediaCardProps {
@@ -26,7 +27,7 @@ export default function MediaCard({
 
           {/* Badge */}
           {imageBadgeText ? (
-            <div className="absolute -top-4 right-3 z-20 sm:right-4 lg:right-5">
+            <div className="absolute -top-4 right-0 z-20">
               <span className="inline-flex h-8 items-center whitespace-nowrap rounded-full bg-[#f26522] px-4 text-xs font-semibold text-white shadow-[0_10px_30px_rgba(242,101,34,0.35)] sm:h-9 sm:px-5 sm:text-sm">
                 {imageBadgeText}
               </span>
@@ -34,7 +35,9 @@ export default function MediaCard({
           ) : null}
 
           {/* White Video Card */}
-          <div className="overflow-hidden rounded-[8px] bg-white ring-1 ring-white/10">
+          <div
+            className={`${styles.videoCard} overflow-hidden rounded-[8px] bg-white ring-1 ring-white/10`}
+          >
 
             {/* Fixed 16:9 Ratio */}
             <div className="relative aspect-video w-full">
