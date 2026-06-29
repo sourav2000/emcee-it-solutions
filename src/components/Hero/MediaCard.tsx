@@ -26,8 +26,8 @@ export default function MediaCard({
 
           {/* Badge */}
           {imageBadgeText ? (
-            <div className="absolute -top-4 right-0 z-20">
-              <span className="inline-flex h-8 items-center whitespace-nowrap rounded-full bg-[#f26522] px-6 text-sm font-semibold text-white shadow-[0_10px_30px_rgba(242,101,34,0.35)]">
+            <div className="absolute -top-4 right-3 z-20 sm:right-4 lg:right-5">
+              <span className="inline-flex h-8 items-center whitespace-nowrap rounded-full bg-[#f26522] px-4 text-xs font-semibold text-white shadow-[0_10px_30px_rgba(242,101,34,0.35)] sm:h-9 sm:px-5 sm:text-sm">
                 {imageBadgeText}
               </span>
             </div>
@@ -35,29 +35,31 @@ export default function MediaCard({
 
           {/* White Video Card */}
           <div className="overflow-hidden rounded-[8px] bg-white ring-1 ring-white/10">
-            <div className="flex min-h-[280px] flex-col sm:min-h-[320px] sm:flex-row">
-              <div className="relative min-h-[200px] flex-1 bg-[#0f2d6e] sm:min-h-[320px]">
-                {hasMedia ? (
-                  <img
-                    src={imageUrl ?? undefined}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover"
-                  />
-                ) : (
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#1a3a7a] to-[#0c1f4d]" />
-                )}
 
-                {hasVideo ? (
-                  <button
-                    type="button"
-                    className="absolute left-1/2 top-1/2 flex h-[4.5rem] w-[4.5rem] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#f26522] text-white shadow-[0_12px_32px_rgba(242,101,34,0.5)] transition-transform duration-300 hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4"
-                    aria-label="Play video"
-                    onClick={() => setIsVideoOpen(true)}
-                  >
-                    <PlayIcon />
-                  </button>
-                ) : null}
-              </div>
+            {/* Fixed 16:9 Ratio */}
+            <div className="relative aspect-video w-full">
+
+              {hasMedia ? (
+                <img
+                  src={imageUrl ?? undefined}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover object-center"
+                />
+              ) : (
+                <div className="absolute inset-0 bg-gradient-to-br from-[#1a3a7a] to-[#0c1f4d]" />
+              )}
+
+              {hasVideo && (
+                <button
+                  type="button"
+                  className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-[#f26522] text-white shadow-[0_12px_32px_rgba(242,101,34,0.5)] transition-all duration-300 hover:scale-105 hover:shadow-[0_18px_45px_rgba(242,101,34,0.55)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4 sm:h-[4.5rem] sm:w-[4.5rem]"
+                  aria-label="Play video"
+                  onClick={() => setIsVideoOpen(true)}
+                >
+                  <PlayIcon />
+                </button>
+              )}
+
             </div>
           </div>
         </div>
