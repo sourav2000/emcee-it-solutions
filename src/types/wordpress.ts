@@ -80,3 +80,53 @@ export type HeroDataState =
   | { status: 'loading' }
   | { status: 'error'; message: string }
   | { status: 'success'; data: HeroContent }
+
+export interface FooterAcfFields {
+  company_name?: string
+  company_description?: string
+  facebook_url?: string
+  instagram_url?: string
+  linkedin_url?: string
+  x_twitter_url?: string
+  youtube_url?: string
+  ai_solutions?: string
+  services?: string
+  company_links?: string
+  popular_cities?: string
+}
+
+export interface FooterSocialLinks {
+  facebook: string
+  instagram: string
+  linkedin: string
+  xTwitter: string
+  youtube: string
+}
+
+export interface FooterListItem {
+  label: string
+  href: string
+  bold?: boolean
+}
+
+export interface FooterContent {
+  companyName: string
+  companyDescription: string
+  socialLinks: FooterSocialLinks
+  aiSolutions: FooterListItem[]
+  services: FooterListItem[]
+  companyLinks: FooterListItem[]
+  popularCities: string[]
+}
+
+export interface WpFooterPage {
+  id: number
+  slug: string
+  title: WpRenderedField
+  acf?: FooterAcfFields
+  meta?: Record<string, unknown>
+}
+
+export type FooterDataState =
+  | { status: 'loading' }
+  | { status: 'ready'; data: FooterContent }
