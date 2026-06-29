@@ -81,14 +81,14 @@ export default function HeroSection() {
           </div>
           <div className="min-w-0">
             <div className={styles.mediaStack}>
-              <div className={styles.mediaCardLayer}>
-                <div className={styles.mediaBackdrop} aria-hidden="true" />
+              {/* <div className={styles.mediaCardLayer}> */}
+                {/* <div className={styles.mediaBackdrop} aria-hidden="true" /> */}
                 <MediaCard
                   imageUrl={data.imageUrl}
                   videoUrl={data.videoUrl}
                   imageBadgeText={data.imageBadgeText}
                 />
-              </div>
+              {/* </div> */}
             </div>
           </div>
         </div>
