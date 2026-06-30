@@ -1,9 +1,10 @@
 .footer {
-  --footer-bg: #0a1628;
-  --footer-text: #94a3b8;
+  --footer-bg: #0f2863;
+  --footer-text: #c5d5db;
   --footer-heading: #ffffff;
   --footer-border: rgba(255, 255, 255, 0.1);
   --footer-link-hover: #ffffff;
+  --footer-bagde-color: #3d7bf4;
 
   background-color: var(--footer-bg);
   color: var(--footer-text);
@@ -192,7 +193,7 @@
 
 .badgeIcon {
   flex-shrink: 0;
-  color: var(--footer-heading);
+  color: var(--footer-bagde-color);
 }
 
 .skeletonBlock {
