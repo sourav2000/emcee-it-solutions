@@ -1,4 +1,4 @@
-import type { HeroContent } from '../../types/wordpress'
+import type { HeroContent } from '../../types/hero'
 import FeatureItem from './FeatureItem'
 import HeroButton from './HeroButton'
 import { InfoPopoverProvider } from './InfoPopoverContext'

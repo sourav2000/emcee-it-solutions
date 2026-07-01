@@ -16,6 +16,27 @@
   padding: 4rem 1.5rem 0;
 }
 
+.errorBanner {
+  margin-bottom: 4rem;
+  padding: 1.5rem;
+  border: 1px solid var(--footer-border);
+  border-radius: 0.75rem;
+  text-align: center;
+}
+
+.errorTitle {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--footer-heading);
+}
+
+.errorMessage {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  color: var(--footer-text);
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr;

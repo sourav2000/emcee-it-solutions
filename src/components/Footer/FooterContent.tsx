@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import type { FooterContent, FooterListItem } from '../../types/wordpress'
+import type { FooterContent, FooterListItem } from '../../types/footer'
 import styles from './Footer.module.css'
 import {
   FacebookIcon,
@@ -49,7 +49,7 @@ const SocialLinks = memo(function SocialLinks({ links }: SocialLinksProps) {
     { label: 'Instagram', href: links.instagram, Icon: InstagramIcon },
     { label: 'LinkedIn', href: links.linkedin, Icon: LinkedInIcon },
     { label: 'YouTube', href: links.youtube, Icon: YouTubeIcon },
-  ]
+  ].filter((item) => item.href)
 
   return (
     <ul className={styles.socialList}>
@@ -133,6 +133,19 @@ export const FooterContentView = memo(function FooterContentView({
     </>
   )
 })
+
+type FooterErrorProps = {
+  message: string
+}
+
+export function FooterError({ message }: FooterErrorProps) {
+  return (
+    <div className={styles.errorBanner} role="alert">
+      <p className={styles.errorTitle}>Unable to load footer content</p>
+      <p className={styles.errorMessage}>{message}</p>
+    </div>
+  )
+}
 
 export function FooterSkeleton() {
   return (
