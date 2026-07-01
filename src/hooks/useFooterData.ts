@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchFooterContent } from '../api'
-import type { FooterDataState } from '../types/footer'
+import { FOOTER_FALLBACK } from '../data/footerFallback'
+import type { FooterDataState } from '../types/wordpress'
 
 export function useFooterData(): FooterDataState {
   const [state, setState] = useState<FooterDataState>({ status: 'loading' })
@@ -11,14 +12,12 @@ export function useFooterData(): FooterDataState {
     fetchFooterContent()
       .then((data) => {
         if (!cancelled) {
-          setState({ status: 'success', data })
+          setState({ status: 'ready', data })
         }
       })
-      .catch((error: unknown) => {
+      .catch(() => {
         if (!cancelled) {
-          const message =
-            error instanceof Error ? error.message : 'Failed to load footer content.'
-          setState({ status: 'error', message })
+          setState({ status: 'ready', data: FOOTER_FALLBACK })
         }
       })
 

@@ -1,5 +1,5 @@
 import { useFooterData } from '../../hooks/useFooterData'
-import { FooterContentView, FooterError, FooterSkeleton } from './FooterContent'
+import { FooterContentView, FooterSkeleton } from './FooterContent'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -10,8 +10,6 @@ export default function Footer() {
       <div className={styles.container}>
         {state.status === 'loading' ? (
           <FooterSkeleton />
-        ) : state.status === 'error' ? (
-          <FooterError message={state.message} />
         ) : (
           <FooterContentView content={state.data} />
         )}

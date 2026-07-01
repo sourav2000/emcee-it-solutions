@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { fetchHeroContent } from '../api'
-import type { HeroDataState } from '../types/hero'
+import type { HeroDataState } from '../types/wordpress'
 
 export function useHeroData(): HeroDataState {
   const [state, setState] = useState<HeroDataState>({ status: 'loading' })
